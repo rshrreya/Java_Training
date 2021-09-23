@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- author data -->
+
+
+    <bean name="author1" class="com.epsilon.Project1.Author">
+		<property name="authorId" value="1" />
+		<property name="authorName" value="PM Bakshi" />
+	</bean>
+
+	<bean name="author2" class="com.epsilon.Project1.Author">
+		<property name="authorId" value="2" />
+		<property name="authorName" value="Mrunal Patel" />
+	</bean>
+
+	<bean name="author3" class="com.epsilon.Project1.Author">
+		<property name="authorId" value="3" />
+		<property name="authorName" value="Nitin Singania" />
+	</bean>
+	
+	
+	<!-- customer data -->
+	
+	
+	<bean name= "customer1" class="com.epsilon.Project1.Customer">
+		<property name="customerId" value="11" />
+		<property name="customerName" value="Shreya" />
+	</bean>
+
+	<bean name="customer2" class="com.epsilon.Project1.Customer">
+		<property name="customerId" value="12" />
+		<property name="customerName" value="Deeksha" />
+	</bean>
+
+	<bean name="customer3" class="com.epsilon.Project1.Customer">
+		<property name="customerId" value="13" />
+		<property name="customerName" value="Sanjana" />
+	</bean>
+	
+	<!-- book data -->
+	
+	<bean name="book1" class="com.epsilon.Project1.Book">
+		<constructor-arg value="21"></constructor-arg>
+		<constructor-arg value="The Constitution of India"></constructor-arg>
+		<constructor-arg value="English"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="31"></constructor-arg>
+		<constructor-arg value="360.5"></constructor-arg>
+	</bean>
+	
+	<bean name="book2" class="com.epsilon.Project1.Book">
+		<constructor-arg value="22"></constructor-arg>
+		<constructor-arg value="The Indian Economy"></constructor-arg>
+		<constructor-arg value="Hindi"></constructor-arg>
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="32"></constructor-arg>
+		<constructor-arg value="566.75"></constructor-arg>
+	</bean>
+	
+	<bean name="book3" class="com.epsilon.Project1.Book">
+		<constructor-arg value="23"></constructor-arg>
+		<constructor-arg value="The Indian Art and Culture"></constructor-arg>
+		<constructor-arg value="Urdu"></constructor-arg>
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="33"></constructor-arg>
+		<constructor-arg value="765.9"></constructor-arg>
+	</bean>
+	
+	<!--  orderitems data -->
+	
+	<bean name="orderItems1" class="com.epsilon.Project1.OrderItems">
+		<property name="id" value="41" />
+		<property name="book" value="21" />
+		<property name="orderId" value="51" />
+	</bean>
+	
+	<bean name="orderItems2" class="com.epsilon.Project1.OrderItems">
+		<property name="id" value="42" />
+		<property name="book" value="22" />
+		<property name="orderId" value="52" />
+	</bean>
+	
+	<bean name="orderItems3" class="com.epsilon.Project1.OrderItems">
+		<property name="id" value="43" />
+		<property name="book" value="23" />
+		<property name="orderId" value="53" />
+	</bean>
+	
+	<!-- publisher data -->
+	
+	<bean name="publisher1" class="com.epsilon.Project1.Publisher">
+		<constructor-arg value="31"></constructor-arg>
+		<constructor-arg value="LexisNexis"></constructor-arg>
+		<constructor-arg value="Delhi"></constructor-arg>
+	</bean>
+
+	<bean name="publisher2" class="com.epsilon.Project1.Publisher">
+		<constructor-arg value="32"></constructor-arg>
+		<constructor-arg value="Disha Publications"></constructor-arg>
+		<constructor-arg value="Ahmedabad"></constructor-arg>
+	</bean>
+
+	<bean name="publisher3" class="com.epsilon.Project1.Publisher">
+		<constructor-arg value="33"></constructor-arg>
+		<constructor-arg value="Arihant"></constructor-arg>
+		<constructor-arg value="Pune"></constructor-arg>
+	</bean>
+	
+	
+	<!-- order data -->
+	
+	
+	<bean name="order1" class="com.epsilon.Project1.Order">
+		<property name="orderId" value="51" />
+		<property name="userId" value="11" />
+		<property name="orderItems">
+		<list>
+		
+		<ref bean="orderItems2"/>
+		<ref bean="orderItems1"/>
+		<ref bean="orderItems3"/>
+		
+		</list>
+		</property>
+	</bean>
+
+	<bean name="order2" class="com.epsilon.Project1.Order">
+		<property name="orderId" value="52" />
+		<property name="userId" value="12" />
+		<property name="orderItems">
+		<list>
+		
+		<ref bean="orderItems2"/>
+		<ref bean="orderItems1"/>
+			
+		</list>
+		</property>
+	</bean>
+
+	<bean name="order3" class="com.epsilon.Project1.Order">
+		<property name="orderId" value="53" />
+		<property name="userId" value="13" />
+		<property name="orderItems">
+		<list>
+		
+		<ref bean="orderItems3"/>
+		
+		</list>
+		</property>
+	</bean>
+
+</beans>
